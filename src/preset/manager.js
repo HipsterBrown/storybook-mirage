@@ -8,29 +8,29 @@ import { Tab } from "../Tab";
 // Register the addon
 addons.register(ADDON_ID, () => {
   // Register the tool
-  addons.add(TOOL_ID, {
-    type: types.TOOL,
-    title: "My addon",
-    match: ({ viewMode }) => !!(viewMode && viewMode.match(/^(story|docs)$/)),
-    render: Tool,
-  });
+  // addons.add(TOOL_ID, {
+  //   type: types.TOOL,
+  //   title: "Mirage",
+  //   match: ({ viewMode }) => !!(viewMode && viewMode.match(/^(story|docs)$/)),
+  //   render: Tool
+  // });
 
   // Register the panel
   addons.add(PANEL_ID, {
     type: types.PANEL,
-    title: "My addon",
+    title: "Mirage",
     match: ({ viewMode }) => viewMode === "story",
-    render: Panel,
+    render: Panel
   });
 
   // Register the tab
-  addons.add(PANEL_ID, {
-    type: types.TAB,
-    title: "My addon",
-    //👇 Checks the current route for the story
-    route: ({ storyId }) => `/myaddon/${storyId}`,
-    //👇 Shows the Tab UI element in myaddon view mode
-    match: ({ viewMode }) => viewMode === "myaddon",
-    render: Tab,
-  });
+  // addons.add(PANEL_ID, {
+  //   type: types.TAB,
+  //   title: "Mirage",
+  //   //👇 Checks the current route for the story
+  //   route: ({ storyId }) => `/myaddon/${storyId}`,
+  //   //👇 Shows the Tab UI element in myaddon view mode
+  //   match: ({ viewMode }) => viewMode === "myaddon",
+  //   render: Tab
+  // });
 });
