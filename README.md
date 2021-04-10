@@ -1,52 +1,30 @@
-# Storybook Addon Kit
+# Storybook Mirage
 
-Simplify the creation of Storybook addons
+A Storybook addon to use and interact with a [MirageJS server](https://miragejs.com/)
 
-- 📝 Live-editing in development
-- ⚛️ React/JSX support
-- 📦 Transpiling and bundling with Babel
-- 🏷 Plugin metadata
-- 🚢 Release management with [Auto](https://github.com/intuit/auto)
-- 🧺 Boilerplate and sample code
+_Created with [Storybook Addon Kit](https://github.com/storybookjs/addon-kit)_
 
 ## Getting Started
 
-Click the **Use this template** button to get started.
-
-![](https://user-images.githubusercontent.com/42671/106809879-35b32000-663a-11eb-9cdc-89f178b5273f.gif)
-
-Clone your repository and install dependencies.
-
-```sh
-npm install
-```
+_TBD: installation and setup instructions_
 
 ### Development scripts
 
 - `npm run start` runs babel in watch mode and starts Storybook
-- `npm run build` build and package your addon code
+- `npm run build` build and package addon code
 
 ## What's included?
 
 ![Demo](https://user-images.githubusercontent.com/42671/107857205-e7044380-6dfa-11eb-8718-ad02e3ba1a3f.gif)
 
-The addon code lives in `src`. It demonstrates all core addon related concepts. The three [UI paradigms](https://storybook.js.org/docs/react/addons/addon-types#ui-based-addons)
+The addon code lives in `src`.
 
-- `src/Tool.js`
-- `src/Panel.js`
-- `src/Tab.js`
+- `src/Panel.js` (displays server requests and handler stats)
+- `src/withServer.js` (decorator to consume and configure MirageJS server)
 
 Which, along with the addon itself, are registered in `src/preset/manager.js`.
 
-Managing State and interacting with a story:
-
-- `src/withGlobals.js` & `src/Tool.js` demonstrates how to use `useGlobals` to manage global state and modify the contents of a Story.
-- `src/withRoundTrip.js` & `src/Panel.js` demonstrates two-way communication using channels.
-- `src/Tab.js` demonstrates how to use `useParameter` to access the current story's parameters.
-
-Your addon might use one or more of these patterns. Feel free to delete unused code. Update `src/preset/manager.js` and `src/preset/preview.js` accordingly.
-
-Lastly, configure you addon name in `src/constants.js`.
+Configure addon name in `src/constants.js`.
 
 ### Metadata
 
