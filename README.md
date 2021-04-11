@@ -4,6 +4,14 @@ A Storybook addon to use and interact with a [MirageJS server](https://miragejs.
 
 _Created with [Storybook Addon Kit](https://github.com/storybookjs/addon-kit)_
 
+## What's included?
+
+Set custom request handlers from Storybook:
+![Custom response form panel](./screenshots/custom-response-panel.png)
+
+View request logs:
+![Request logs panel](./screenshots/request-logs-panel.png)
+
 ## Getting Started
 
 _TBD: installation and setup instructions_
@@ -12,10 +20,6 @@ _TBD: installation and setup instructions_
 
 - `npm run start` runs babel in watch mode and starts Storybook
 - `npm run build` build and package addon code
-
-## What's included?
-
-![Demo](https://user-images.githubusercontent.com/42671/107857205-e7044380-6dfa-11eb-8718-ad02e3ba1a3f.gif)
 
 The addon code lives in `src`.
 
