@@ -14,7 +14,78 @@ View request logs:
 
 ## Getting Started
 
-_TBD: installation and setup instructions_
+Install with your package manager of choice:
+
+```
+npm install --save-dev storybook-mirage
+```
+
+or
+
+```
+yarn add --dev storybook-mirage
+```
+
+Register the addon:
+
+```js
+// .storybook/main.js
+
+module.exports = {
+  stories: [],
+  addons: [
+    // Other Storybook addons
+    "storybook-mirage", //👈 the addon registered here
+  ],
+};
+```
+
+Setup the decorator:
+
+```js
+// .storybook/preview.js
+
+import { withServer } from "storybook-mirage";
+import { makeServer } from "../path/to/server";
+
+// optionally pass the server creator function to the decorator
+export const decorators = [withServer(makeServer)];
+```
+
+Configure the decorator using the `mirage` [parameter](https://storybook.js.org/docs/react/writing-stories/parameters):
+
+```jsx
+// Button.stories.js | Button.stories.ts
+
+import Button from './Button';
+
+export default {
+  title: 'Button',
+  component: Button,
+  parameters: {
+    mirage: {
+      // automatically log requests to browser console https://miragejs.com/api/classes/server/#logging
+      logging: true,
+      // customize when a request responds https://miragejs.com/docs/main-concepts/route-handlers/#timing
+      timing: 1000,
+      // override route handlers for the story https://miragejs.com/docs/main-concepts/route-handlers/
+      handlers: {
+        get: {
+          '/api/user': 404, // status code
+          '/api/items': [204, {}, { items: [] }], // arguments for Response https://miragejs.com/api/classes/response/
+        },
+        post: {
+          'api/task': { task: {} } // body for Response
+        }
+      },
+      // data to seed Mirage ORM https://miragejs.com/docs/main-concepts/fixtures/
+      fixtures: null,
+      // pass in a custom Mirage server instance to override the global setting
+      instance: null
+    }
+  },
+};
+```
 
 ### Development scripts
 
