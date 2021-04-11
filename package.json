@@ -1,6 +1,6 @@
 {
   "name": "storybook-mirage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Storybook addon to use and interact with a MirageJS server",
   "keywords": [
     "storybook-addons",
