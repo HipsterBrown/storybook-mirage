@@ -12,10 +12,10 @@ import { PARAM_KEY, EVENTS, ADDON_ID } from "./constants";
 
 export const withServer = makeServer => (StoryFn, context) => {
   const server = useRef();
-  const { logging, fixtures, errors, timing, instance } = useParameter(
+  const { logging, fixtures, handlers, timing, instance } = useParameter(
     PARAM_KEY,
     {
-      errors: null,
+      handlers: null,
       fixtures: null,
       logging: false,
       timing: null,
@@ -46,13 +46,16 @@ export const withServer = makeServer => (StoryFn, context) => {
 
     if (fixtures) server.current.db.loadData(fixtures);
     if (timing !== null) server.current.timing = timing;
-    if (errors) {
-      Object.keys(errors).forEach(route => {
-        const value = errors[route];
-        server.current.get(route, () => {
-          if (typeof value === "number") return new Response(value);
-          if (Array.isArray(value)) return new Response(...value);
-          return new Response(200, {}, { errors: value });
+    if (handlers) {
+      Object.keys(handlers).forEach(method => {
+        const set = handlers[method];
+        Object.keys(set).forEach(route => {
+          const value = set[route];
+          server.current[method](route, () => {
+            if (typeof value === "number") return new Response(value);
+            if (Array.isArray(value)) return new Response(...value);
+            return new Response(200, {}, value);
+          });
         });
       });
     }

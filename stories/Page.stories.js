@@ -23,8 +23,10 @@ LoggedIn.args = {
 export const LoggedOut = Template.bind({});
 LoggedOut.parameters = {
   mirage: {
-    errors: {
-      "/api/user": [404, {}, null]
+    handlers: {
+      get: {
+        "/api/user": [404, {}, null]
+      }
     }
   }
 };
