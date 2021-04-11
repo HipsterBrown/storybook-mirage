@@ -7,5 +7,8 @@ export const PARAM_KEY = `mirage`;
 export const EVENTS = {
   RESULT: `${ADDON_ID}/result`,
   REQUEST: `${ADDON_ID}/request`,
-  CLEAR: `${ADDON_ID}/clear`
+  UNHANDLED: `${ADDON_ID}/unhandled`,
+  ERROR: `${ADDON_ID}/error`,
+  CLEAR: `${ADDON_ID}/clear`,
+  SET: `${ADDON_ID}/set`
 };

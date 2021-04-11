@@ -8,7 +8,7 @@ export default {
   component: Page,
   parameters: {
     mirage: {
-      logging: true
+      timing: 1000
     }
   }
 };
@@ -21,6 +21,13 @@ LoggedIn.args = {
 };
 
 export const LoggedOut = Template.bind({});
+LoggedOut.parameters = {
+  mirage: {
+    errors: {
+      "/api/user": [404, {}, null]
+    }
+  }
+};
 LoggedOut.args = {
   ...HeaderStories.LoggedOut.args
 };
