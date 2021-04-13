@@ -1,6 +1,5 @@
 import {
   useEffect,
-  useGlobals,
   useParameter,
   useRef,
   useChannel,
