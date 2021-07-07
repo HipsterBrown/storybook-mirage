@@ -7,10 +7,9 @@ import {
 } from "@storybook/addons";
 import { Response } from "miragejs";
 import { FORCE_RE_RENDER } from "@storybook/core-events";
-import { PARAM_KEY, EVENTS, ADDON_ID } from "./constants";
+import { PARAM_KEY, EVENTS } from "./constants";
 
-export const withServer = makeServer => (StoryFn, context) => {
-  const server = useRef();
+export const withServer = makeServer => (StoryFn) => {
   const { logging, fixtures, handlers, timing, instance } = useParameter(
     PARAM_KEY,
     {
@@ -21,6 +20,7 @@ export const withServer = makeServer => (StoryFn, context) => {
       instance: null
     }
   );
+  const server = useRef(instance || makeServer());
   const emit = useChannel({
     [EVENTS.SET]: ({ verb, path, response }) => {
       server.current[verb.toLowerCase()](path, () => {
@@ -33,12 +33,6 @@ export const withServer = makeServer => (StoryFn, context) => {
   });
 
   useEffect(() => {
-    if (instance) {
-      server.current = instance;
-    }
-    if (makeServer) {
-      server.current = makeServer();
-    }
     if (!server.current) return;
 
     server.current.logging = logging;
