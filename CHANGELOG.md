@@ -1,3 +1,15 @@
+# v0.0.4 (Wed Jul 07 2021)
+
+#### ⚠️ Pushed to `main`
+
+- fix: initialize mirage server in first render ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 1
+
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.0.3 (Tue Apr 13 2021)
 
 #### ⚠️ Pushed to `main`
