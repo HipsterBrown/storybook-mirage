@@ -1,7 +1,9 @@
 #!/usr/local/bin/node
 
-const chalk = require("chalk");
-const packageJson = require("./package.json");
+import chalk from 'chalk'
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+const packageJson = require('./package.json')
 
 const name = packageJson.name;
 const displayName = packageJson.storybook.displayName;
