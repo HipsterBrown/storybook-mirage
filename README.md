@@ -93,7 +93,7 @@ export default {
           { traits: ['withAddress', 'withSubscription'] },
           { traits: ['withAddress'] },
         ],
-        // create 2 distinct items
+        // create 2 distinct items that contain override values
         items: [
           {
             traits: [
