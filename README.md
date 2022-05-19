@@ -52,6 +52,8 @@ import { makeServer } from "../path/to/server";
 export const decorators = [withServer(makeServer)];
 ```
 
+`makeServer` is a function that returns an instance of a [Mirage Server](https://miragejs.com/api/classes/server/), usually through calling the [`createServer` function from Mirage](https://miragejs.com/docs/getting-started/overview/). 
+
 Configure the decorator using the `mirage` [parameter](https://storybook.js.org/docs/react/writing-stories/parameters):
 
 ```jsx
