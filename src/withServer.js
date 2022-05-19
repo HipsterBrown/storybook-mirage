@@ -10,14 +10,15 @@ import { FORCE_RE_RENDER } from "@storybook/core-events";
 import { PARAM_KEY, EVENTS } from "./constants";
 
 export const withServer = makeServer => (StoryFn) => {
-  const { logging, fixtures, handlers, timing, instance } = useParameter(
+  const { logging, fixtures, handlers, timing, instance, seeds } = useParameter(
     PARAM_KEY,
     {
       handlers: null,
       fixtures: null,
       logging: false,
       timing: null,
-      instance: null
+      instance: null,
+      seeds: null
     }
   );
   const server = useRef(instance || makeServer());
@@ -50,6 +51,12 @@ export const withServer = makeServer => (StoryFn) => {
             return new Response(200, {}, value);
           });
         });
+      });
+    }
+    if (seeds) {
+      Object.keys(seeds).forEach((factoryName) => {
+        const traits = seeds[factoryName];
+        server.current.create(factoryName, ...traits);
       });
     }
 
