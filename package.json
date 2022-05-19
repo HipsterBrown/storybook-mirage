@@ -33,6 +33,7 @@
     "release": "npm run build && auto shipit"
   },
   "devDependencies": {
+    "@auto-it/conventional-commits": "^10.36.5",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
@@ -53,9 +54,9 @@
     "@storybook/components": "^6.2.7",
     "@storybook/core-events": "^6.2.7",
     "@storybook/theming": "^6.2.7",
+    "miragejs": "*",
     "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0",
-    "miragejs": "*"
+    "react-dom": "^16.8.0 || ^17.0.0"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -74,5 +75,12 @@
       "react-native"
     ],
     "icon": "https://avatars.githubusercontent.com/u/47899903?s=200&v=4"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "git-tag",
+      "conventional-commits"
+    ]
   }
 }
