@@ -1,3 +1,15 @@
+# v0.0.5 (Thu May 19 2022)
+
+#### 🐛 Bug Fix
+
+- docs(README): add more details about makeServer argument [#5](https://github.com/HipsterBrown/storybook-mirage/pull/5) ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 1
+
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.0.4 (Wed Jul 07 2021)
 
 #### ⚠️ Pushed to `main`
