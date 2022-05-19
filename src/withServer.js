@@ -54,9 +54,12 @@ export const withServer = makeServer => (StoryFn) => {
       });
     }
     if (seeds) {
-      Object.keys(seeds).forEach((factoryName) => {
-        const traits = seeds[factoryName];
-        server.current.create(factoryName, ...traits);
+      Object.keys(seeds).forEach(factoryName => {
+        const items = seeds[factoryName];
+        items.forEach(item => {
+          const { traits = [], count = 1 } = item;
+          server.current.createList(factoryName, count, ...traits);
+        });
       });
     }
 
