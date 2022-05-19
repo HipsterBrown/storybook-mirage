@@ -82,18 +82,19 @@ export default {
       fixtures: null,
       // pass in a custom Mirage server instance to override the global setting
       instance: null,
-      // created seeded data from Factories defined within your makeServer function
+      // created seeded data from Factories defined within your makeServer function,
+      // with the key names corresponding to Factory names.
       seeds: {
-        // create 2 of the same type of addresses (same traits)
+        // create 2 addresses with the same traits.
         address: [{ traits: ['withRecipient', 'withCompleteAddress'], count: 2 }],
         // create a single cart item with no specific traits
         cart: [{}],
-        // create 2 distinct users
+        // create 2 users with different traits
         user: [
           { traits: ['withAddress', 'withSubscription'] },
           { traits: ['withAddress'] },
         ],
-        // create 2 distinct items that contain override values
+        // create 2 items that contain override values
         items: [
           {
             traits: [
