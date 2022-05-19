@@ -84,7 +84,7 @@ export default {
       instance: null,
       // created seeded data from Factories defined within your makeServer function,
       // with the key names corresponding to Factory names.
-      seeds: {
+      factorySeeds: {
         // create 2 addresses with the same traits.
         address: [{ traits: ['withRecipient', 'withCompleteAddress'], count: 2 }],
         // create a single cart item with no specific traits
