@@ -81,7 +81,43 @@ export default {
       // data to seed Mirage ORM https://miragejs.com/docs/main-concepts/fixtures/
       fixtures: null,
       // pass in a custom Mirage server instance to override the global setting
-      instance: null
+      instance: null,
+      // created seeded data from Factories defined within your makeServer function
+      seeds: {
+        // create 2 of the same type of addresses (same traits)
+        address: [{ traits: ['withRecipient', 'withCompleteAddress'], count: 2 }],
+        // create a single cart item with no specific traits
+        cart: [{}],
+        // create 2 distinct users
+        user: [
+          { traits: ['withAddress', 'withSubscription'] },
+          { traits: ['withAddress'] },
+        ],
+        // create 2 distinct items
+        items: [
+          {
+            traits: [
+              'withSomeTrait',
+              'withOtherTrait',
+              // override certain values
+              {
+                name: 'R2D2',
+                gender: 'Male',
+              },
+            ],
+          },
+          {
+            traits: [
+              'withSomeTrait',
+              'withOtherTrait',
+              {
+                name: 'BB8',
+                gender: 'Male',
+              },
+            ],
+          },
+        ],
+    },
     }
   },
 };
