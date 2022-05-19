@@ -29,7 +29,7 @@
     "storybook": "start-storybook -p 6006",
     "start": "concurrently \"npm run storybook -- --no-manager-cache --quiet\" \"npm run build -- --watch\"",
     "build-storybook": "build-storybook",
-    "prerelease": "node check-metadata.js",
+    "prerelease": "node check-metadata.mjs",
     "release": "npm run build && auto shipit"
   },
   "devDependencies": {
