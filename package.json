@@ -79,7 +79,6 @@
   "auto": {
     "plugins": [
       "npm",
-      "git-tag",
       "conventional-commits"
     ]
   }
