@@ -89,13 +89,8 @@ export default {
         address: [{ traits: ['withRecipient', 'withCompleteAddress'], count: 2 }],
         // create a single cart item with no specific traits
         cart: [{}],
-        // create 2 users with different traits
-        user: [
-          { traits: ['withAddress', 'withSubscription'] },
-          { traits: ['withAddress'] },
-        ],
-        // create 2 items that contain override values
-        items: [
+        // create 2 users that contain override values
+        users: [
           {
             traits: [
               'withSomeTrait',
