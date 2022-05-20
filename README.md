@@ -90,7 +90,7 @@ export default {
         // create a single cart item with no specific traits
         cart: [{}],
         // create 2 users that contain override values
-        users: [
+        user: [
           {
             traits: [
               'withSomeTrait',
