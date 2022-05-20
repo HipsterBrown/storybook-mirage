@@ -4,7 +4,7 @@ export const makeServer = () =>
   createServer({
     routes() {
       this.get("/api/user", () => ({
-        name: "Jim Jam",
+        name: "Jim Jam"
       }));
       this.get("/api/users");
     },

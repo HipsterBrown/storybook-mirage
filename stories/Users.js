@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import './users.css';
+import "./users.css";
 
 export const Users = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('/api/users')
+    fetch("/api/users")
       .then((response) => response.json())
       .then((data) => {
         if (data.users) setUsers(data.users);
@@ -14,7 +14,7 @@ export const Users = () => {
   }, []);
 
   return (
-    <div className='users-container'>
+    <div className="users-container">
       <p>
         This is an example list of users created via the factorySeeds property
         in the Users story component. The first two receive specific properties
