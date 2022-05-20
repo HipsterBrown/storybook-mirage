@@ -1,3 +1,24 @@
+# v0.0.6 (Fri May 20 2022)
+
+#### 🐛 Bug Fix
+
+- Allow stories to seed their own data using the factories defined within the makeServer function. [#4](https://github.com/HipsterBrown/storybook-mirage/pull/4) ([@daves28](https://github.com/daves28))
+
+#### ⚠️ Pushed to `main`
+
+- chore: update prerelease command ([@HipsterBrown](https://github.com/HipsterBrown))
+- chore: fix chalk usage by converting to esm ([@HipsterBrown](https://github.com/HipsterBrown))
+- chore: update outdated dev dependencies ([@HipsterBrown](https://github.com/HipsterBrown))
+- chore: remove unknown auto plugin ([@HipsterBrown](https://github.com/HipsterBrown))
+- chore: update auto, include conventional-commits plugin ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 2
+
+- David Soerensen ([@daves28](https://github.com/daves28))
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.0.5 (Thu May 19 2022)
 
 #### 🐛 Bug Fix
