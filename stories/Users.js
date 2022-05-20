@@ -9,7 +9,7 @@ export const Users = () => {
     fetch('/api/users')
       .then((response) => response.json())
       .then((data) => {
-        if (data.name !== 'Error') setUsers(data.users);
+        if (data.users) setUsers(data.users);
       });
   }, []);
 
