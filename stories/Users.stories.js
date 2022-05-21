@@ -18,12 +18,10 @@ export const UserList = Template.bind({});
 
 UserList.parameters = {
   mirage: {
-    factorySeeds: {
-      user: [
-        { traits: [{ name: "John Doe" }] },
-        { traits: [{ name: "Luke Skywalker" }] },
-        { traits: [], count: 4 },
-      ],
-    },
+    factorySeeds: [
+      { factory: "user", traits: [{ name: "John Doe" }] },
+      { factory: "user", traits: [{ name: "Luke Skywalker" }] },
+      { factory: "user", traits: [], count: 4 },
+    ],
   },
 };

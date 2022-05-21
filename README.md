@@ -86,36 +86,35 @@ export default {
       instance: null,
       // created seeded data from Factories defined within your makeServer function,
       // with the key names corresponding to Factory names.
-      factorySeeds: {
+      factorySeeds: [
         // create 2 addresses with the same traits.
-        address: [{ traits: ['withRecipient', 'withCompleteAddress'], count: 2 }],
+        { factory: 'address', traits: ['withRecipient', 'withCompleteAddress'], count: 2 },
         // create a single cart item with no specific traits
-        cart: [{}],
+        { factory: 'cart' },
         // create 2 users that contain override values
-        user: [
-          {
-            traits: [
-              'withSomeTrait',
-              'withOtherTrait',
-              // override certain values
-              {
-                name: 'R2D2',
-                gender: 'Male',
-              },
-            ],
-          },
-          {
-            traits: [
-              'withSomeTrait',
-              'withOtherTrait',
-              {
-                name: 'BB8',
-                gender: 'Male',
-              },
-            ],
-          },
-        ],
-    },
+        {
+          factory: 'user',
+          traits: [
+            'withSomeTrait',
+            'withOtherTrait',
+            // override certain values
+            {
+              name: 'R2D2',
+              gender: 'Male',
+            },
+          ],
+        },
+        { factory: 'user',
+          traits: [
+            'withSomeTrait',
+            'withOtherTrait',
+            {
+              name: 'BB8',
+              gender: 'Male',
+            },
+          ],
+        },
+      ],
     }
   },
 };

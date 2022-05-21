@@ -18,7 +18,7 @@ export const Users = () => {
     <article>
       <Header />
       <section>
-        <h3>Seeding data in a story</h3>
+        <h2>Seeding data in a story</h2>
         <div className="users-container">
           <p>
             This is an example list of users created via the factorySeeds
@@ -28,6 +28,7 @@ export const Users = () => {
             makeServer function
           </p>
           <ul>
+            {!Boolean(users.length) && "Loading..."}
             {users.map((user) => (
               <li key={user.id}>Name: {user.name}</li>
             ))}
