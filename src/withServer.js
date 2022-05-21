@@ -54,13 +54,10 @@ export const withServer = makeServer => (StoryFn) => {
       });
     }
     if (factorySeeds) {
-      Object.keys(factorySeeds).forEach(factoryName => {
-        const items = factorySeeds[factoryName];
-        items.forEach(item => {
-          const { traits = [], count = 1 } = item;
-          server.current.createList(factoryName, count, ...traits);
-        });
-      });
+      factorySeeds.forEach(item => {
+        const {factory, traits = [], count = 1} = item;
+        server.current.createList(factory, count, ...traits)
+      })
     }
 
     const {
