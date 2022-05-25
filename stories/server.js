@@ -1,4 +1,4 @@
-import { createServer, Factory, Model } from "miragejs";
+import { createServer, Factory, Model, trait } from "miragejs";
 
 export const makeServer = () =>
   createServer({
@@ -17,6 +17,11 @@ export const makeServer = () =>
         name(i) {
           return `User ${i + 1}`;
         },
+        withColor: trait({
+          color: ["Blue", "Red", "Green", "Yellow"][
+            Math.round(Math.random() * 3)
+          ],
+        }),
       }),
     },
   });

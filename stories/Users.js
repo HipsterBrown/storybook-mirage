@@ -29,7 +29,11 @@ export const Users = () => {
           </p>
           <ul>
             {users.map((user) => (
-              <li key={user.id}>Name: {user.name}</li>
+              <li key={user.id}>
+                <strong>Name:</strong> {user.name} <br />
+                <strong>Color:</strong>{" "}
+                {Boolean(user.color) ? user.color : "No color"}
+              </li>
             ))}
           </ul>
         </div>
