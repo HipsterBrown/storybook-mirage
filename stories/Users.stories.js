@@ -20,9 +20,10 @@ UserList.parameters = {
   mirage: {
     factorySeeds: {
       user: [
-        { traits: [{ name: "John Doe" }] },
-        { traits: [{ name: "Luke Skywalker" }] },
-        { traits: [], count: 4 },
+        { attrs: { name: "John Doe" } },
+        { attrs: { name: "Luke Skywalker" } },
+        { traits: ["withColor"], count: 3 },
+        { count: 2 },
       ],
     },
   },
