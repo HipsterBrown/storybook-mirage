@@ -90,29 +90,29 @@ export default {
         // create 2 addresses with the same traits.
         address: [{ traits: ['withRecipient', 'withCompleteAddress'], count: 2 }],
         // create a single cart item with no specific traits
-        cart: [{}],
+        cart: 1,
         // create 2 users that contain override values
         user: [
           {
             traits: [
               'withSomeTrait',
               'withOtherTrait',
-              // override certain values
-              {
-                name: 'R2D2',
-                gender: 'Male',
-              },
             ],
+              // override specific attribute swith the `attrs` property 
+            attrs: {
+              name: 'R2D2',
+              gender: 'Male',
+            },
           },
           {
             traits: [
               'withSomeTrait',
               'withOtherTrait',
-              {
-                name: 'BB8',
-                gender: 'Male',
-              },
             ],
+            attrs: {
+              name: 'BB8',
+              gender: 'Male',
+            },
           },
         ],
     },
