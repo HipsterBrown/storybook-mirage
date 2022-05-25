@@ -1,3 +1,15 @@
+# v0.0.7 (Wed May 25 2022)
+
+#### 🐛 Bug Fix
+
+- attributes and allow for just a number [#7](https://github.com/HipsterBrown/storybook-mirage/pull/7) ([@daves28](https://github.com/daves28))
+
+#### Authors: 1
+
+- David Soerensen ([@daves28](https://github.com/daves28))
+
+---
+
 # v0.0.6 (Fri May 20 2022)
 
 #### 🐛 Bug Fix
