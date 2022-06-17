@@ -1,13 +1,14 @@
 import React from "react";
 import { themes, convert } from "@storybook/theming";
 import { useAddonState } from "@storybook/api";
+import { nanoid } from "nanoid";
 import { ADDON_ID } from "../constants";
 import {
   TabsState,
   Placeholder,
   ObjectControl,
   Form,
-  Spaced
+  Spaced,
 } from "@storybook/components";
 
 /**
@@ -18,15 +19,15 @@ export const PanelContent = ({ results, onSetResponse }) => {
   const [response, setResponse] = useAddonState(`${ADDON_ID}/response`, {
     statusCode: 200,
     headers: {},
-    body: {}
+    body: {},
   });
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     const values = {
       verb: form.elements.verb.value,
       path: form.elements.path.value,
-      response: [response.statusCode, response.headers, response.body]
+      response: [response.statusCode, response.headers, response.body],
     };
     onSetResponse(values);
   };
@@ -73,8 +74,8 @@ export const PanelContent = ({ results, onSetResponse }) => {
         color={convert(themes.normal).color.positive}
       >
         <Placeholder style={{ textAlign: "left" }}>
-          {results.requests.map(({ verb, path, request }, index) => (
-            <details key={index}>
+          {results.requests.map(({ verb, path, request }) => (
+            <details key={nanoid()}>
               <summary>
                 {verb} {path}
               </summary>
@@ -89,8 +90,8 @@ export const PanelContent = ({ results, onSetResponse }) => {
         color={convert(themes.normal).color.warning}
       >
         <Placeholder style={{ textAlign: "left" }}>
-          {results.unhandled.map(({ verb, path, request }, index) => (
-            <details key={index}>
+          {results.unhandled.map(({ verb, path, request }) => (
+            <details key={nanoid()}>
               <summary>
                 {verb} {path}
               </summary>
@@ -105,8 +106,8 @@ export const PanelContent = ({ results, onSetResponse }) => {
         color={convert(themes.normal).color.negative}
       >
         <Placeholder style={{ textAlign: "left" }}>
-          {results.errors.map(({ verb, path, request, error }, index) => (
-            <details key={index}>
+          {results.errors.map(({ verb, path, request, error }) => (
+            <details key={nanoid()}>
               <summary>
                 {verb} {path} : {error.toString()}
               </summary>

@@ -8,13 +8,13 @@ export const Page = ({ onLogin, onLogout, onCreateAccount }) => {
   const [{ loading, user, errors }, setResponse] = useState({
     loading: true,
     user: null,
-    errors: null
+    errors: null,
   });
 
   useEffect(() => {
     fetch("/api/user")
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setResponse({ loading: false, errors: null, user: data });
       });
   }, []);
@@ -98,10 +98,4 @@ export const Page = ({ onLogin, onLogout, onCreateAccount }) => {
       </section>
     </article>
   );
-};
-
-Page.propTypes = {
-  onLogin: PropTypes.func.isRequired,
-  onLogout: PropTypes.func.isRequired,
-  onCreateAccount: PropTypes.func.isRequired
 };

@@ -9,7 +9,7 @@ export const Header = ({
   loading,
   onLogin,
   onLogout,
-  onCreateAccount
+  onCreateAccount,
 }) => (
   <header>
     <div className="wrapper">
@@ -65,11 +65,8 @@ export const Header = ({
 
 Header.propTypes = {
   user: PropTypes.shape({}),
-  onLogin: PropTypes.func.isRequired,
-  onLogout: PropTypes.func.isRequired,
-  onCreateAccount: PropTypes.func.isRequired
 };
 
 Header.defaultProps = {
-  user: null
+  user: null,
 };
