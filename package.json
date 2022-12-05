@@ -38,7 +38,11 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/jest": "^0.0.10",
     "@storybook/react": "^6.2.7",
+    "@storybook/testing-library": "^0.0.13",
     "auto": "^10.3.0",
     "babel-loader": "^8.1.0",
     "chalk": "^5.0.0",
@@ -81,5 +85,8 @@
       "npm",
       "conventional-commits"
     ]
+  },
+  "dependencies": {
+    "nanoid": "^4.0.0"
   }
 }
