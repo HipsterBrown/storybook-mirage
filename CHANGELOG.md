@@ -1,3 +1,15 @@
+# v0.0.8 (Mon Dec 05 2022)
+
+#### 🐛 Bug Fix
+
+- fix(decorator): configure server synchronously [#10](https://github.com/HipsterBrown/storybook-mirage/pull/10) ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 1
+
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.0.7 (Wed May 25 2022)
 
 #### 🐛 Bug Fix
