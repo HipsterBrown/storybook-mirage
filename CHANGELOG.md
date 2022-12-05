@@ -1,3 +1,19 @@
+# v0.1.0 (Mon Dec 05 2022)
+
+#### 🚀 Enhancement
+
+- feat(deps): update peer dependency range for react, react-dom ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### ⚠️ Pushed to `main`
+
+- chore(workflows): update checkout, setup-node actions ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 1
+
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.0.8 (Mon Dec 05 2022)
 
 #### 🐛 Bug Fix
