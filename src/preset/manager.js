@@ -10,6 +10,6 @@ addons.register(ADDON_ID, () => {
     type: types.PANEL,
     title: "Mirage",
     match: ({ viewMode }) => viewMode === "story",
-    render: Panel,
+    render: Panel
   });
 });
