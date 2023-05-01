@@ -13,9 +13,13 @@ export const withServer = (makeServer) => (StoryFn) => {
       instance: null,
       factorySeeds: null,
     });
+
+  globalThis.server = globalThis.server ?? instance ?? makeServer();
+  globalThis.server.logging = logging;
+  
   const emit = useChannel({
     [EVENTS.SET]: ({ verb, path, response }) => {
-      server.current[verb.toLowerCase()](path, () => {
+      globalThis.server[verb.toLowerCase()](path, () => {
         if (typeof response === "number") return new Response(response);
         if (Array.isArray(response)) return new Response(...response);
         return new Response(200, {}, response);
@@ -23,9 +27,6 @@ export const withServer = (makeServer) => (StoryFn) => {
       addons.getChannel().emit(FORCE_RE_RENDER);
     },
   });
-
-  globalThis.server = globalThis.server ?? instance ?? makeServer();
-  globalThis.server.logging = logging;
 
   if (fixtures) globalThis.server.db.loadData(fixtures);
   if (timing !== null) globalThis.server.timing = timing;
