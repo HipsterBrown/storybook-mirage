@@ -1,3 +1,15 @@
+# v0.1.1 (Mon May 01 2023)
+
+#### 🐛 Bug Fix
+
+- Fixing missed server.current -> globalThis.server [#14](https://github.com/HipsterBrown/storybook-mirage/pull/14) ([@daves28](https://github.com/daves28))
+
+#### Authors: 1
+
+- David Soerensen ([@daves28](https://github.com/daves28))
+
+---
+
 # v0.1.0 (Mon Dec 05 2022)
 
 #### 🚀 Enhancement
