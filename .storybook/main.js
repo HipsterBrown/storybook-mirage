@@ -1,4 +1,5 @@
-module.exports = {
+/** @type { import('@storybook/react-vite').StorybookConfig } */
+const config = {
   stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: ["../preset.js", "@storybook/addon-essentials", "@storybook/addon-interactions"],
   features: {
@@ -12,3 +13,4 @@ module.exports = {
     options: {}
   }
 };
+export default config;
