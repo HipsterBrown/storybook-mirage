@@ -6,10 +6,12 @@ import { ADDON_ID } from "../constants";
 import {
   TabsState,
   Placeholder,
-  ObjectControl,
   Form,
   Spaced,
 } from "@storybook/components";
+import {
+  ObjectControl
+} from "@storybook/blocks"
 
 /**
  * Checkout https://github.com/storybookjs/storybook/blob/next/addons/jest/src/components/Panel.tsx
