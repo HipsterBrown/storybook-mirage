@@ -1,3 +1,15 @@
+# v0.2.0 (Fri May 05 2023)
+
+#### 🚀 Enhancement
+
+- feat: upgrade to prerelease storybook [#12](https://github.com/HipsterBrown/storybook-mirage/pull/12) ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 1
+
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.1.1 (Mon May 01 2023)
 
 #### 🐛 Bug Fix
