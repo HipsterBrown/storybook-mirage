@@ -12,7 +12,6 @@
 #### Authors: 3
 
 - Brandon Sarà ([@bsara](https://github.com/bsara))
-- Brandon Sara (brandon.sara@pointclickcare.com)
 - Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
 
 ---
