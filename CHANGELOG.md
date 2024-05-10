@@ -1,3 +1,22 @@
+# v0.3.0 (Fri May 10 2024)
+
+#### 🚀 Enhancement
+
+- feat: upgrade to Storybook 8 + new addon API [#17](https://github.com/HipsterBrown/storybook-mirage/pull/17) ([@HipsterBrown](https://github.com/HipsterBrown))
+- feat: added ability to provide functions as parameter route handlers [#16](https://github.com/HipsterBrown/storybook-mirage/pull/16) (brandon.sara@pointclickcare.com [@bsara](https://github.com/bsara))
+
+#### ⚠️ Pushed to `main`
+
+- chore: update auto to fix release workflow ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 3
+
+- Brandon Sarà ([@bsara](https://github.com/bsara))
+- Brandon Sara (brandon.sara@pointclickcare.com)
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.2.0 (Fri May 05 2023)
 
 #### 🚀 Enhancement
