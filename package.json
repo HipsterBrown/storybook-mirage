@@ -33,7 +33,7 @@
     "release": "npm run build && auto shipit"
   },
   "devDependencies": {
-    "@auto-it/conventional-commits": "^10.36.5",
+    "@auto-it/conventional-commits": "^11.1.6",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
@@ -44,7 +44,7 @@
     "@storybook/react": "^7.0.0",
     "@storybook/react-webpack5": "^7.0.0",
     "@storybook/testing-library": "^0.1.0",
-    "auto": "^10.3.0",
+    "auto": "^11.1.6",
     "babel-loader": "^8.1.0",
     "chalk": "^5.0.0",
     "concurrently": "^7.2.0",
