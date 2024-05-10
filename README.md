@@ -75,6 +75,8 @@ export default {
         get: {
           '/api/user': 404, // status code
           '/api/items': [204, {}, { items: [] }], // arguments for Response https://miragejs.com/api/classes/response/
+          '/api/items/:id': (schema, request) => // Route handler function https://miragejs.com/docs/main-concepts/route-handlers
+              new Response(200, {}, { id: request.params.id, name: `Item ${request.params.id}` })
         },
         post: {
           'api/task': { task: {} } // body for Response

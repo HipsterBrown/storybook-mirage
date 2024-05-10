@@ -35,9 +35,10 @@ export const withServer = (makeServer) => (StoryFn) => {
       const set = handlers[method];
       Object.keys(set).forEach((route) => {
         const value = set[route];
-        globalThis.server[method](route, () => {
+        globalThis.server[method](route, (...args) => {
           if (typeof value === "number") return new Response(value);
           if (Array.isArray(value)) return new Response(...value);
+          if (typeof value === 'function') return value(...args);
           return new Response(200, {}, value);
         });
       });
