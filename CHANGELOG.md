@@ -1,3 +1,15 @@
+# v0.4.0 (Fri May 10 2024)
+
+#### 🚀 Enhancement
+
+- feat: switch from babel to swc for build [#18](https://github.com/HipsterBrown/storybook-mirage/pull/18) ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 1
+
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.3.0 (Fri May 10 2024)
 
 #### 🚀 Enhancement
