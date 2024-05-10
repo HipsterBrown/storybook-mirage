@@ -1,6 +1,5 @@
 import React from "react";
-import { within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { expect, within } from "@storybook/test";
 import { Page } from "./Page";
 import * as HeaderStories from "./Header.stories";
 

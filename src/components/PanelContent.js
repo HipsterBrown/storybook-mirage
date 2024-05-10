@@ -1,6 +1,6 @@
 import React from "react";
 import { themes, convert } from "@storybook/theming";
-import { useAddonState } from "@storybook/api";
+import { useAddonState } from "@storybook/manager-api";
 import { nanoid } from "nanoid";
 import { ADDON_ID } from "../constants";
 import {

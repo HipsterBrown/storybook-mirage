@@ -1,4 +1,4 @@
-import { useEffect, useParameter, useChannel, addons } from "@storybook/addons";
+import { addons, useChannel, useParameter } from "@storybook/preview-api";
 import { Response } from "miragejs";
 import { FORCE_RE_RENDER } from "@storybook/core-events";
 import { PARAM_KEY, EVENTS } from "./constants";
@@ -16,7 +16,7 @@ export const withServer = (makeServer) => (StoryFn) => {
 
   globalThis.server = globalThis.server ?? instance ?? makeServer();
   globalThis.server.logging = logging;
-  
+
   const emit = useChannel({
     [EVENTS.SET]: ({ verb, path, response }) => {
       globalThis.server[verb.toLowerCase()](path, () => {
@@ -60,12 +60,12 @@ export const withServer = (makeServer) => (StoryFn) => {
 
   const { handledRequest, unhandledRequest, erroredRequest } =
     globalThis.server.pretender;
-  globalThis.server.pretender.handledRequest = function (verb, path, request) {
+  globalThis.server.pretender.handledRequest = function(verb, path, request) {
     handledRequest(verb, path, request);
     emit(EVENTS.REQUEST, { verb, path, request });
   };
 
-  globalThis.server.pretender.unhandledRequest = function (
+  globalThis.server.pretender.unhandledRequest = function(
     verb,
     path,
     request
@@ -74,7 +74,7 @@ export const withServer = (makeServer) => (StoryFn) => {
     emit(EVENTS.UNHANDLED, { verb, path, request });
   };
 
-  globalThis.server.pretender.erroredRequest = function (
+  globalThis.server.pretender.erroredRequest = function(
     verb,
     path,
     request,
