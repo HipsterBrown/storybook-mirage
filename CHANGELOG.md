@@ -1,3 +1,19 @@
+# v0.5.0 (Fri Jun 21 2024)
+
+#### 🚀 Enhancement
+
+- feat: switch from babel to swc for build [#18](https://github.com/HipsterBrown/storybook-mirage/pull/18) ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### 🐛 Bug Fix
+
+- fix: resolve errors when using vite-builder [#20](https://github.com/HipsterBrown/storybook-mirage/pull/20) ([@HipsterBrown](https://github.com/HipsterBrown))
+
+#### Authors: 1
+
+- Nick Hehr ([@HipsterBrown](https://github.com/HipsterBrown))
+
+---
+
 # v0.4.0 (Fri May 10 2024)
 
 #### 🚀 Enhancement
