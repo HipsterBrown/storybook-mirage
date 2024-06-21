@@ -1,1 +1,1 @@
-export * from './dist/preset/index.js'
+module.exports = require('./dist/preset/index.js')

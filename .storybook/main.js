@@ -15,7 +15,7 @@ const config = {
     autodocs: true
   },
   framework: {
-    name: "@storybook/react-vite",
+    name: "@storybook/react-webpack5",
     options: {}
   }
 };
