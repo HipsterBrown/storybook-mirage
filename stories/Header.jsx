@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Button } from "./Button";
 import "./header.css";
 
 export const Header = ({
-  user,
+  user = {},
   loading,
   onLogin,
   onLogout,
@@ -62,11 +61,3 @@ export const Header = ({
     </div>
   </header>
 );
-
-Header.propTypes = {
-  user: PropTypes.shape({}),
-};
-
-Header.defaultProps = {
-  user: null,
-};
