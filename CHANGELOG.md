@@ -1,3 +1,15 @@
+# v0.5.1 (Mon Apr 28 2025)
+
+#### 🐛 Bug Fix
+
+- Upgrade nanoid [#23](https://github.com/HipsterBrown/storybook-mirage/pull/23) ([@rzane](https://github.com/rzane))
+
+#### Authors: 1
+
+- Ray Zane ([@rzane](https://github.com/rzane))
+
+---
+
 # v0.5.0 (Fri Jun 21 2024)
 
 #### 🚀 Enhancement
