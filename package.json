@@ -88,6 +88,6 @@
     ]
   },
   "dependencies": {
-    "nanoid": "^4.0.0"
+    "nanoid": "^5.1.5"
   }
 }
