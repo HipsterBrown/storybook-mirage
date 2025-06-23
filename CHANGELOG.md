@@ -1,3 +1,15 @@
+# v0.5.2 (Mon Jun 23 2025)
+
+#### 🐛 Bug Fix
+
+- Updates miragejs past the lodash security vulnerability [#24](https://github.com/HipsterBrown/storybook-mirage/pull/24) ([@camilopayan](https://github.com/camilopayan))
+
+#### Authors: 1
+
+- Camilo Payan ([@camilopayan](https://github.com/camilopayan))
+
+---
+
 # v0.5.1 (Mon Apr 28 2025)
 
 #### 🐛 Bug Fix
