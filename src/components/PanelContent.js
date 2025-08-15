@@ -1,16 +1,14 @@
-import { themes, convert } from "@storybook/theming";
-import { useAddonState } from "@storybook/manager-api";
+import { themes, convert } from "storybook/theming";
+import { useAddonState } from "storybook/manager-api";
 import { nanoid } from "nanoid";
 import { ADDON_ID } from "../constants";
+import { ObjectControl } from "./ObjectControl";
 import {
   TabsState,
   Placeholder,
   Form,
   Spaced,
-} from "@storybook/components";
-import {
-  ObjectControl
-} from "@storybook/blocks"
+} from "storybook/internal/components";
 
 /**
  * Checkout https://github.com/storybookjs/storybook/blob/next/addons/jest/src/components/Panel.tsx
