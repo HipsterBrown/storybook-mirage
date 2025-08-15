@@ -3,7 +3,7 @@ import { Response } from "miragejs";
 import { FORCE_RE_RENDER } from "storybook/internal/core-events";
 import { PARAM_KEY, EVENTS } from "./constants";
 
-export const withServer = (makeServer) => (StoryFn) => {
+export const withServer = (StoryFn, context) => {
   const { logging, fixtures, handlers, timing, instance, factorySeeds } =
     useParameter(PARAM_KEY, {
       handlers: null,
@@ -14,12 +14,12 @@ export const withServer = (makeServer) => (StoryFn) => {
       factorySeeds: null,
     });
 
-  globalThis.server = globalThis.server ?? instance ?? makeServer();
-  globalThis.server.logging = logging;
+  context.server = context.server ?? instance ?? makeServer();
+  context.server.logging = logging;
 
   const emit = useChannel({
     [EVENTS.SET]: ({ verb, path, response }) => {
-      globalThis.server[verb.toLowerCase()](path, () => {
+      context.server[verb.toLowerCase()](path, () => {
         if (typeof response === "number") return new Response(response);
         if (Array.isArray(response)) return new Response(...response);
         return new Response(200, {}, response);
@@ -28,14 +28,14 @@ export const withServer = (makeServer) => (StoryFn) => {
     },
   });
 
-  if (fixtures) globalThis.server.db.loadData(fixtures);
-  if (timing !== null) globalThis.server.timing = timing;
+  if (fixtures) context.server.db.loadData(fixtures);
+  if (timing !== null) context.server.timing = timing;
   if (handlers) {
     Object.keys(handlers).forEach((method) => {
       const set = handlers[method];
       Object.keys(set).forEach((route) => {
         const value = set[route];
-        globalThis.server[method](route, (...args) => {
+        context.server[method](route, (...args) => {
           if (typeof value === "number") return new Response(value);
           if (Array.isArray(value)) return new Response(...value);
           if (typeof value === 'function') return value(...args);
@@ -48,24 +48,24 @@ export const withServer = (makeServer) => (StoryFn) => {
     Object.keys(factorySeeds).forEach((factoryName) => {
       const items = factorySeeds[factoryName];
       if (typeof items === "number")
-        globalThis.server.createList(factoryName, items);
+        context.server.createList(factoryName, items);
       else if (typeof items === "object") {
         items.forEach((item) => {
           const { traits = [], attrs = {}, count = 1 } = item;
-          globalThis.server.createList(factoryName, count, ...traits, attrs);
+          context.server.createList(factoryName, count, ...traits, attrs);
         });
       }
     });
   }
 
   const { handledRequest, unhandledRequest, erroredRequest } =
-    globalThis.server.pretender;
-  globalThis.server.pretender.handledRequest = function (verb, path, request) {
+    context.server.pretender;
+  context.server.pretender.handledRequest = function (verb, path, request) {
     handledRequest(verb, path, request);
     emit(EVENTS.REQUEST, { verb, path, request });
   };
 
-  globalThis.server.pretender.unhandledRequest = function (
+  context.server.pretender.unhandledRequest = function (
     verb,
     path,
     request
@@ -74,7 +74,7 @@ export const withServer = (makeServer) => (StoryFn) => {
     emit(EVENTS.UNHANDLED, { verb, path, request });
   };
 
-  globalThis.server.pretender.erroredRequest = function (
+  context.server.pretender.erroredRequest = function (
     verb,
     path,
     request,
