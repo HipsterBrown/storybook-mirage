@@ -48,8 +48,21 @@ Setup the decorator:
 import { withServer } from "storybook-mirage";
 import { makeServer } from "../path/to/server";
 
-// optionally pass the server creator function to the decorator
-export const decorators = [withServer(makeServer)];
+export const decorators = [withServer];
+
+const preview = {
+  decorators: [withServer],
+  async beforeEach(context) {
+    // optionally set the server on the story context
+    context.server = makeServer();
+
+    // cleanup after story is torn down
+    return () => {
+      context.server.shutdown();
+    };
+  }
+};
+export default preview;
 ```
 
 `makeServer` is a function that returns an instance of a [Mirage Server](https://miragejs.com/api/classes/server/), usually through calling the [`createServer` function from Mirage](https://miragejs.com/docs/getting-started/overview/). 
@@ -122,6 +135,14 @@ export default {
   },
 };
 ```
+
+### Usage with docs
+
+When rendering multiple stories in a storybook doc, you may see the warning `You created a second Pretender instance while there was already one running.`
+
+This happens because mirage server is created for every storybook story to avoid having mirage handlers be inadvertantly shared between stories. Be aware that future versions of pretender/mirage may cause unexpected behavior any docs rendering multiple stories.
+
+This is not an issue when a single story is rendered.
 
 ### Development scripts
 
