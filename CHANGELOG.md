@@ -1,3 +1,15 @@
+# v0.6.0 (Mon Aug 25 2025)
+
+#### 🚀 Enhancement
+
+- feat: storybook 9 support [#25](https://github.com/HipsterBrown/storybook-mirage/pull/25) ([@TychosDrunkElk](https://github.com/TychosDrunkElk))
+
+#### Authors: 1
+
+- Phoebe Stierhoff ([@TychosDrunkElk](https://github.com/TychosDrunkElk))
+
+---
+
 # v0.5.2 (Mon Jun 23 2025)
 
 #### 🐛 Bug Fix
